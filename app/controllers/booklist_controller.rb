@@ -1,6 +1,7 @@
 class BooklistController < ApplicationController
   def index
     #全件表示
+    @booklists = Booklist.all
   end
 
   def create
