@@ -1,10 +1,11 @@
 <h1>Book List</h1>
 
 <a href="">新規作成</a>
-<table>
+<table border="1">
   <tr>
     <th>タイトル</th>
     <th>著者</th>
+    <td colspan="2"></td>
   </tr>
 <% @booklists.each do | book | %>
   <tr>
@@ -13,4 +14,5 @@
     <td>編集</td>
     <td>削除</td>
   </tr>
+<% end %>
 </table>
