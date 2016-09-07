@@ -1,5 +1,6 @@
 class TestController < ApplicationController
   def index
-    render "test/index"
+   @msg = "変数を使ったデータの受け渡し"
+   render "test/index"
   end
 end
