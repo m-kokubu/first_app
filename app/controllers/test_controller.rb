@@ -1,5 +1,5 @@
 class TestController < ApplicationController
   def index
-    render text: 'Test#index'
+    render "test/index"
   end
 end
