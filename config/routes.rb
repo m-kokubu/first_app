@@ -4,10 +4,11 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'booklist#index'
-    get 'create', to:'booklist#create'
-   post 'create_completed', to:'booklist#create_completed'
-    get 'edit/:id'        , to:'booklist#edit'
+    get 'create',               to:'booklist#create'
+   post 'create_completed',     to:'booklist#create_completed'
+    get 'edit/:id'        ,     to:'booklist#edit'
   patch 'editing_complete/:id', to:'booklist#editing_complete'
+    get 'delete/:id'          , to:'booklist#delete'
 
   #  get 'test', to:'test#index'
 
