@@ -17,12 +17,14 @@ class BooklistController < ApplicationController
 
   def edit
     #編集
-
+    @booklist = Booklist.find(params[:id])
   end
 
-  def editing_completed(booklist)
+  def editing_complete
     #編集完了
-
+    @booklist = Booklist.find(params[:id])
+    @booklist.update(booklist_params)
+    redirect_to action: 'index'
   end
 
   def delete

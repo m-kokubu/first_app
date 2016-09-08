@@ -1,0 +1,10 @@
+<h1>Edit</h1>
+
+
+<%=form_for @booklist, url:{controller: :booklist, action: :editing_complete,id: @booklist.id} do |f|%>
+  <%= f.label :name, 'タイトル'%><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :writer , '著者'%><br>
+  <%= f.text_field :writer %><br>
+  <%= f.submit "編集" %>
+<% end %>
