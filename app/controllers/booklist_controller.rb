@@ -22,7 +22,7 @@ class BooklistController < ApplicationController
 
   def editing_complete
     #編集完了
-    @booklist = Booklist.find(params[:id])
+    @booklist = Booklist.find(params[:booklist][:id])
     @booklist.update(booklist_params)
     redirect_to action: 'index'
   end

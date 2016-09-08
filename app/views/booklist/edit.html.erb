@@ -1,7 +1,8 @@
 <h1>Edit</h1>
 
 
-<%=form_for @booklist, url:{controller: :booklist, action: :editing_complete,id: @booklist.id} do |f|%>
+<%=form_for @booklist, url:{controller: :booklist, action: :editing_complete} do |f|%>
+  <%= f.hidden_field :id %>
   <%= f.label :name, 'タイトル'%><br>
   <%= f.text_field :name %><br>
   <%= f.label :writer , '著者'%><br>
