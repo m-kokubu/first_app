@@ -1,0 +1,18 @@
+<h1>Book List</h1>
+
+<%=link_to '新規作成', '/create'%>
+<table border="1">
+  <tr>
+    <th>タイトル</th>
+    <th>著者</th>
+    <td colspan="2"></td>
+  </tr>
+<% @booklists.each do | book | %>
+  <tr>
+    <td><%= book.name %></td>
+    <td><%= book.writer %></td>
+    <td>編集</td>
+    <td>削除</td>
+  </tr>
+<% end %>
+</table>
