@@ -30,7 +30,6 @@ class BooklistController < ApplicationController
 
   def delete
     #削除
-    @msg = params[:name]
     @booklist = Booklist.find(params[:id])
     @booklist.destroy
     redirect_to action: 'index'
