@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    attributes:
+      booklist:
+        name: "タイトル"
+        writer: "著者"
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      blank: "を入力してください"
+      taken: "は既に登録されています"
+      too_long: "は%{count}文字以内で入力してください"

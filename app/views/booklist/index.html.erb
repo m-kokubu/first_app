@@ -1,6 +1,9 @@
 <h1>Book List</h1>
 
-<%=@msg %><br>
+<p class="notice">
+  <%=flash[:notice] %>
+</p>
+
 <%=link_to '新規作成', '/create'%>
 <table border="1">
   <tr>
