@@ -27,8 +27,11 @@ class BooklistController < ApplicationController
   def editing_complete
     #編集完了
     @booklist = Booklist.find(params[:id])
-    @booklist.update(booklist_params)
-    redirect_to action: 'index'
+    if @booklist.update(booklist_params)
+      redirect_to action: 'index'
+    else
+      render action:'edit'
+    end
   end
 
   def delete
