@@ -12,8 +12,11 @@ class BooklistController < ApplicationController
   def create_completed
     #新規登録完了
     @booklist = Booklist.new(booklist_params)
-    @booklist.save
-    redirect_to action: 'index'
+    if @booklist.save
+      redirect_to action: 'index'
+    else
+      render action:'create'
+    end
   end
 
   def edit

@@ -2,6 +2,12 @@
 
 
 <%=form_for @booklist, url:{controller: :booklist, action: :create_completed} do |f|%>
+  <% if @booklist.errors.any? %>
+    <% @booklist.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  <% end %>
+
   <%= f.label :name, 'タイトル'%><br>
   <%= f.text_field :name %><br>
   <%= f.label :writer , '著者'%><br>
