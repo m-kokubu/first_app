@@ -9,7 +9,6 @@ Rails.application.routes.draw do
    get   'edit/:id'        , to:'booklist#edit'
    patch 'editing_complete', to:'booklist#editing_complete'
    get   'delete/:id'      , to:'booklist#delete'
-
   #  get 'test', to:'test#index'
 
   # Example of regular route:
