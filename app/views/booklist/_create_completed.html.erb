@@ -1,0 +1,6 @@
+<tr>
+  <td><%=@booklist.name %></td>
+  <td><%=@booklist.writer %></td>
+  <td><%=link_to '編集', "edit/#{@booklist.id}"%></td>
+  <td><%=link_to '削除', "delete/#{@booklist.id}"%></td>
+</tr>
