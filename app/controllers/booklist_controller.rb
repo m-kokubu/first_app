@@ -2,20 +2,22 @@ class BooklistController < ApplicationController
   def index
     #全件表示
     @booklists = Booklist.all
-
-  end
-
-  def create
     @booklist = Booklist.new
   end
+
+  # def create
+  #   @booklist = Booklist.new
+  # end
 
   def create_completed
     #新規登録完了
     @booklist = Booklist.new(booklist_params)
-    if @booklist.save
-      redirect_to action: 'index'
-    else
-      render action:'create'
+    if request.xhr? #tureだったらajax
+       if @booklist.save
+         render @booklist
+       else
+         render 'error', object: @booklist
+       end
     end
   end
 

@@ -1,22 +1,38 @@
 <h1>Book List</h1>
 
-<p class="notice">
-  <%=flash[:notice] %>
-</p>
+<!-- エラー表示 -->
+<div id="error_messages">
+</div>
 
-<%=link_to '新規作成', '/create'%>
-<table border="1">
-  <tr>
-    <th>タイトル</th>
-    <th>著者</th>
-    <td colspan="2"></td>
-  </tr>
-<% @booklists.each do | book | %>
-  <tr>
-    <td><%= book.name %></td>
-    <td><%= book.writer %></td>
-    <td><%=link_to '編集', "edit/#{book.id}"%></td>
-    <td><%=link_to '削除', "delete/#{book.id}"%></td>
-  </tr>
+<!-- #新規登録 -->
+<div id="create">
+<%=form_for @booklist, url:{controller: :booklist, action: :create_completed},remote:true do |f|%>
+  <%= f.label :name, 'タイトル'%>
+  <%= f.text_field :name %>
+  <%= f.label :writer , '著者'%>
+  <%= f.text_field :writer %>
+  <%= f.submit "登録" %><br>
 <% end %>
+</div>
+
+<br>
+<!-- 登録内容全件表示 -->
+<table border="1"　id="all_list">
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>著者</th>
+      <td colspan="2">編集：削除</td>
+    </tr>
+  </thead>
+  <tbody id="list">
+    <% @booklists.each do | book | %>
+      <tr>
+        <td><%= book.name %></td>
+        <td><%= book.writer %></td>
+        <td><%=link_to '編集', "edit/#{book.id}"%></td>
+        <td><%=link_to '削除', "delete/#{book.id}"%></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
