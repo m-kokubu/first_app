@@ -14,7 +14,7 @@ class BooklistController < ApplicationController
     @booklist = Booklist.new(booklist_params)
     if request.xhr? #tureだったらajax
        if @booklist.save
-         render @booklist
+         render 
        else
          render 'error', object: @booklist
        end
